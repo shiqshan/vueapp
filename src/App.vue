@@ -1,18 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MyPerson name="清华大学" address="北京" :num="22"/>
+    <hr/>
+    <MyPerson :school="school"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyPerson from './components/MyPerson.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    MyPerson
+  },
+  data() {
+    return {
+      school: {
+        name: '复旦大学',
+        address: '上海',
+      }
+    }
+  },
 }
 </script>
 
